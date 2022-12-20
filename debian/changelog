@@ -1,0 +1,11 @@
+woff2 (1.0.2-1-deepin1) unstable; urgency=medium
+
+  * Rebuild
+
+ -- Deepin Packages Builder <packages@deepin.org>  Thu, 24 Nov 2022 07:21:40 +0800
+
+woff2 (1.0.2-1) unstable; urgency=low
+
+  * Initial release. Closes: #883828.
+
+ -- Jeremy Bicha <jbicha@debian.org>  Fri, 08 Dec 2017 10:03:34 -0500

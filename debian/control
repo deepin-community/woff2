@@ -1,0 +1,59 @@
+Source: woff2
+Section: libs
+Priority: optional
+Maintainer: Debian Fonts Task Force <pkg-fonts-devel@lists.alioth.debian.org>
+Uploaders: Jeremy Bicha <jbicha@debian.org>
+Build-Depends: cmake,
+               debhelper (>= 10),
+               libbrotli-dev,
+               pkg-config,
+Standards-Version: 4.1.2
+Homepage: https://github.com/google/woff2
+Vcs-Git: https://anonscm.debian.org/git/pkg-fonts/woff2.git
+Vcs-Browser: https://anonscm.debian.org/git/pkg-fonts/woff2.git
+
+Package: libwoff1
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Description: library for converting fonts to WOFF 2.0
+ woff2 is a library for converting fonts from the TTF format to the WOFF 2.0
+ format. The library also allows decompression from WOFF 2.0 to TTF.
+ .
+ The WOFF 2.0 format uses the Brotli compression algorithm to compress fonts
+ suitable for use in CSS @font-face rules. WOFF 2.0 is a W3C Candidate
+ Recommendation.
+
+Package: libwoff-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         libbrotli-dev,
+         libwoff1 (= ${binary:Version})
+Description: library for converting fonts to WOFF 2.0 - development files
+ woff2 is a library for converting fonts from the TTF format to the WOFF 2.0
+ format. The library also allows decompression from WOFF 2.0 to TTF.
+ .
+ The WOFF 2.0 format uses the Brotli compression algorithm to compress fonts
+ suitable for use in CSS @font-face rules. WOFF 2.0 is a W3C Candidate
+ Recommendation.
+ .
+ This package contains the development files.
+
+Package: woff2
+Architecture: any
+Section: utils
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Description: utilities for converting fonts to WOFF 2.0
+ woff2 is a library for converting fonts from the TTF format to the WOFF 2.0
+ format. The library also allows decompression from WOFF 2.0 to TTF.
+ .
+ The WOFF 2.0 format uses the Brotli compression algorithm to compress fonts
+ suitable for use in CSS @font-face rules. WOFF 2.0 is a W3C Candidate
+ Recommendation.
+ .
+ This package contains the woff2_compress, woff2_decompress, and woff2_info
+ utilities.

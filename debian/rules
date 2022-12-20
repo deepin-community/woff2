@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+VERSION_MINOR = $(shell dpkg-parsechangelog | sed -n 's/^Version: //p' | \
+			cut -d. -f1,2).0
+
+%:
+	dh $@ --buildsystem=cmake
+
+override_dh_makeshlibs:
+	dh_makeshlibs -V'libwoff1 (>= $(VERSION_MINOR))' -- -c4
+
+override_dh_missing:
+	dh_missing --fail-missing
